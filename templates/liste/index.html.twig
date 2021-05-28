@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConvController!{% endblock %}
+
+{% block body %}
+<h3>Etudiant</h3><div align = right><a href="/liste/CSV">CSV</a> </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomE</th>
+                <th>PrenomE</th>
+                <th>NumRueE</th>
+                <th>NomRueE</th>
+                <th>CodePostalE</th>
+                <th>TelE</th>
+                <th>EmailE</th>
+                <th>VilleE</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td>{{ etudiant.id }}</td>
+                <td>{{ etudiant.NomE }}</td>
+                <td>{{ etudiant.PrenomE }}</td>
+                <td>{{ etudiant.NumRueE }}</td>
+                <td>{{ etudiant.NomRueE }}</td>
+                <td>{{ etudiant.CodePostalE }}</td>
+                <td>{{ etudiant.TelE }}</td>
+                <td>{{ etudiant.EmailE }}</td>
+                <td>{{ etudiant.VilleE }}</td>
+                <td>
+                    <a href="{{ path('etudiant_show', {'id': etudiant.id}) }}">show</a>
+                    <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+					
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	<h3>Entreprise index</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>RaisonEnt</th>
+                <th>NumRueEnt</th>
+                <th>NomRueEnt</th>
+                <th>VilleEnt</th>
+                <th>CodePostalEnt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entreprise in entreprises %}
+            <tr>
+                <td>{{ entreprise.id }}</td>
+                <td>{{ entreprise.RaisonEnt }}</td>
+                <td>{{ entreprise.NumRueEnt }}</td>
+                <td>{{ entreprise.NomRueEnt }}</td>
+                <td>{{ entreprise.VilleEnt }}</td>
+                <td>{{ entreprise.CodePostalEnt }}</td>
+                <td>
+                    <a href="{{ path('entreprise_show', {'id': entreprise.id}) }}">show</a>
+                    <a href="{{ path('entreprise_edit', {'id': entreprise.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	  <h3>Stage index</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DateD</th>
+                <th>DateF</th>
+                <th>Maitre de Stage</th>
+				<th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stage in stages %}
+            <tr>
+                <td>{{ stage.id }}</td>
+                <td>{{ stage.DateD ? stage.DateD|date('Y-m-d') : '' }}</td>
+                <td>{{ stage.DateF ? stage.DateF|date('Y-m-d') : '' }}</td>
+                 <td>{{ stage.getLienMS() }}</td>
+				 <td>
+                    <a href="{{ path('stage_show', {'id': stage.id}) }}">show</a>
+                    <a href="{{ path('stage_edit', {'id': stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	    <h3>MaitreStage index</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomMS</th>
+                <th>PrenomMS</th>
+                <th>TelMS</th>
+                <th>FonctionMS</th>
+                <th>EmailMS</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for maitre_stage in maitre_stages %}
+            <tr>
+                <td>{{ maitre_stage.id }}</td>
+                <td>{{ maitre_stage.NomMS }}</td>
+                <td>{{ maitre_stage.PrenomMS }}</td>
+                <td>{{ maitre_stage.TelMS }}</td>
+                <td>{{ maitre_stage.FonctionMS }}</td>
+                <td>{{ maitre_stage.EmailMS }}</td>
+                <td>
+                    <a href="{{ path('maitre_stage_show', {'id': maitre_stage.id}) }}">show</a>
+                    <a href="{{ path('maitre_stage_edit', {'id': maitre_stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	<h3>Representant index</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomR</th>
+                <th>PrenomR</th>
+                <th>TelR</th>
+                <th>Fonction</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for representant in representants %}
+            <tr>
+                <td>{{ representant.id }}</td>
+                <td>{{ representant.NomR }}</td>
+                <td>{{ representant.PrenomR }}</td>
+                <td>{{ representant.TelR }}</td>
+                <td>{{ representant.Fonction }}</td>
+                <td>
+                    <a href="{{ path('representant_show', {'id': representant.id}) }}">show</a>
+                    <a href="{{ path('representant_edit', {'id': representant.id}) }}">edit</a>
+					
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<div>
+     
+	
+</form>
+</div>
+{% endblock %}

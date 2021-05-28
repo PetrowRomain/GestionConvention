@@ -1,0 +1,14 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+conv_new:
+    path: conv_new
+    controller: App\Controller\ConvController::new
+    
+    
+pdfconv:
+    path: pdfconv
+    controller: App\Controller\ConvController::pdf
+
+

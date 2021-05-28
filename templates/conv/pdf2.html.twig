@@ -1,0 +1,124 @@
+{% block body %}
+
+<html>    <head>
+        <style>
+            
+            page {
+                margin: 10px 60px;
+            }
+
+        
+
+            footer {
+                position: fixed; 
+                bottom: -5px; 
+                left: 0px; 
+                right: 0px;
+                height: 0px; 
+
+          
+            }
+        </style>
+    </head><body>
+	<footer><center> <font size = 7.5pt> 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br/>LYCEE GUY CHAUVET Rue de l'éperon 86200 LOUDUN –Tel : 05 49 98 17 51 -Fax 05 49 98 79 09 –Mail : 0860021F@ac-poitiers.fr
+</footer></center></font>
+	
+	<center> <b><font size = 4> ANNEE SCOLAIRE {{op}}-{{op12}}<br/><br/>
+
+SECTION DE TECHNICIENS SUPERIEURS<br/>
+SERVICES INFORMATIQUES AUX ORGANISATIONS<br/>
+PREMIERE ANNEE<br/><br/>
+
+CONVENTION DE STAGE</center></font></b><br/><br/>
+
+<div align=&ldquo; justify &rdquo;>
+<b><font>ARTICLE 1<size = 2></b><br/>
+La présente convention règle les rapports entre<br/>
+ <b><u>l'entreprise ou l’organisme d’accueil</b></u><br/>
+Raison sociale : {{entreprise.RaisonEnt}}.................................................................................<br/>
+Adresse : n° .{{entreprise.NumRueEnt}}..... voie   .....{{entreprise.NomRueEnt}}........................................................................................<br/>
+Ville :   .....{{entreprise.VilleEnt}}........................................................................... Code postal : ...{{entreprise.CodePostalEnt}}..............<br/>
+ Représenté(e) par :<br/>
+ Nom :  .........{{representant.NomR}}..............Prénom : ....{{representant.PrenomR}}............................................<br/>
+ Téléphone :  ...........{{representant.TelR}}....... Qualité ou fonction exercée : ....{{representant.Fonction}}......................<br/>
+ <center>ET<br/></center>
+ <b><u>le  Lycée  Polyvalent  Régional  Guy  CHAUVET</b></u> <b>à  LOUDUN</b>,  représenté  par Monsieur<br/>
+ le proviseur du Lycée.<br/><br/>
+ Elle  concerne  le  séjour  en  entreprise  de <u>l’étudiant.e stagiaire</u> en Section  de  Techniciens<br/>
+ supérieurs Services Informatiques aux Organisations, première année, désigné.eci-après par <br/>
+ l'étudiant:<br/>
+ Nom :   {{etudiant.NomE}}.................................................. Prénom : {{etudiant.PrenomE}}.................................................<br/>
+ Adresse : n° {{etudiant.NumRueE}}........... voie : {{etudiant.NomRueE}}............................................................................................<br/>
+ Ville :  {{etudiant.VilleE}}.................................................................................  Code postal : {{etudiant.CodePostalE}}.............<br/>
+ Courriel :  {{etudiant.EmailE}}.................................................  Téléphone :  {{etudiant.TelE}}...............<br/><br/>
+ <br/><b><font>ARTICLE 2<size = 2></b><br/>
+ Ce séjour en entreprise doit permettre <b> de préparer et réaliser une étude approfondie sur un<br/>
+ problème concret lié à l'utilisation de moyens informatiques.</b><br/>
+ Cette étude porte sur un problème d'informatique de gestion dont le sujet intéresse l'entreprise<br/>
+ et areçu l'agrément du professeur responsable.<br/>
+ Durant ce stage, l'étudiant sera suivi par un.e représentant.e de l'entreprise appelé.e Maitre de<br/>
+ stage:<br/>
+ Nom :  .....{{maitrestage.NomMS}}................................... Prénom : .{{maitrestage.PrenomMS}}.....................................<br/>
+ Courriel :  {{maitrestage.EmailMS}}.............................................  Téléphone :  ..{{maitrestage.TelMS}}..<br/>
+ Qualité ou fonction exercée : ........{{maitrestage.FonctionMS}}.........................................<br/><br/>
+ <br/><b><font>ARTICLE 3<size = 2></b><br/><br/>
+ Le stage se déroulera sur une période de cinq semaines du lundi {{dateD}} au dimanche<br/>
+{{dateF}}, ces deux dates incluses.<br/><br/>
+<br/><br/><br/><br/><br/><b><font>ARTICLE 4<size = 2></b><br/>
+ L'étudiant  doit  observer  la  réglementation  de  l'entreprise  :  horaires  de travail,  règles  de <br/>
+ sécurité, visites médicales, ...<br/>
+ En cas de manquement à la discipline, il peut être mis fin au stage par le chef d'entreprise, qui<br/>
+ prendra au préalable l'avis du proviseur du lycée. </div>
+<br/><br/><b><font>ARTICLE 5<size = 2></b><br/>
+Durant  le  stage,  l'étudiant,  qui  garde  sonstatut  d'étudiant,  demeure  sous  la  responsabilité<br/>
+  du Lycée en qualité d'étudiant stagiaire. Restant sous statut d'étudiant, il ne peut prétendre à une<br/>
+  rémunération de la part de l'entreprise qui, de son côté, ne doit pas attendre un profit direct<br/>
+  de l'activité de l'étudiant.<br/>
+ <br/> <b><font>ARTICLE 6<size = 2></b><br/> 
+  L'étudiant,  ou  son  représentant  légal,  certifie  avoir  souscrit  une  assurance  à  responsabilité<br/>
+  civile couvrant les dommages occasionnés aux tiers lors de sa présence en entreprise.<br/>
+  <br/><b><font>ARTICLE 7<size = 2></b><br/>
+  L'étudiant bénéficie de la législation sur les accidents de travail en application de l'article 416-<br/>
+  2° du Code de la Sécurité Sociale, y compris pour les accidents de trajet survenus pendant le<br/>
+  stage (Note de service N° 86-017 parue au B.O. N° 5-1986)<br/>
+  En cas d'accident survenant à l'étudiant, soit au cours du travail, soit au cours du trajet, le chef<br/>
+  d'entreprise  s'engage  à  faire  parvenir  toutes  les  informations,  le  plus  rapidement  possible  à<br/>
+  Monsieurle  Proviseur  du  Lycée  Guy  Chauvet  à  qui  incombe  la  déclaration  d'accident  du<br/>
+  travail.<br/>
+  <br/><b><font>ARTICLE 8<size = 2></b><br/>
+  A  la  fin  du  stage,  une  attestation  de  stage  fournie  par  le  lycée  est  remise  au  stagiaire  par  le <br/>
+  chef  d'entreprise  qui  atteste  de  l'assiduité  et  de  l'activité  du  stagiaire.  Cette attestation<br/>
+  précisera les liens avec le référentiel du BTS (compétences professionnelles).<br/>
+  <br/><b><font>ARTICLE 9<size = 2></b><br/>
+  Cette   convention,   établie   en   triple   exemplaire,   n'engage   pas   l'entreprise   à   recruter
+  ultérieurement l'étudiant.<br/><br/><br/><br/>
+  </div>
+  <div>
+ <div align = right> Fait à Loudun le {{ "now"|date("m/d/Y") }}</div><br/><br/><br/>
+ </div>
+
+ <table align = center>
+	<tr>
+		<td >Pour l'entreprise </td>
+		<td width = 50>          </td>
+		<td>L'étudiant.e</td>
+		<td>          </td>
+		<td>Pour le lycée Guy Chauvet
+	</tr>
+
+	<tr>
+		<td> Le chef d'entreprise </td>
+		<td >          </td>
+		<td>ou représentant.e légal.e</td>
+		<td width = 50>          </td>
+		<td>Le Proviseur</td>
+	</tr>
+ </table>
+</body>
+</html>
+        
+
+
+{% endblock %}

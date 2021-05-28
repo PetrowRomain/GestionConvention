@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant{% endblock %}
+
+{% block body %}
+    <h1>Etudiant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>NomE</th>
+                <td>{{ etudiant.NomE }}</td>
+            </tr>
+            <tr>
+                <th>PrenomE</th>
+                <td>{{ etudiant.PrenomE }}</td>
+            </tr>
+            <tr>
+                <th>NumRueE</th>
+                <td>{{ etudiant.NumRueE }}</td>
+            </tr>
+            <tr>
+                <th>NomRueE</th>
+                <td>{{ etudiant.NomRueE }}</td>
+            </tr>
+			<tr>
+                <th>Complément Adresse</th>
+                <td>{{ etudiant.CompE }}</td>
+            </tr>
+            <tr>
+                <th>CodePostalE</th>
+                <td>{{ etudiant.CodePostalE }}</td>
+            </tr>
+            <tr>
+                <th>TelE</th>
+                <td>{{ etudiant.TelE }}</td>
+            </tr>
+            <tr>
+                <th>EmailE</th>
+                <td>{{ etudiant.EmailE }}</td>
+            </tr>
+            <tr>
+                <th>VilleE</th>
+                <td>{{ etudiant.VilleE }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etudiant_index') }}">back to list</a>
+
+    <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+	<a href="{{ path('etudiant_pdf', {'id': etudiant.id}) }}">pdf</a>
+    {{ include('etudiant/_delete_form.html.twig') }}
+{% endblock %}

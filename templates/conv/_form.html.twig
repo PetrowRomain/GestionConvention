@@ -1,0 +1,82 @@
+
+
+<table align = center  border=4 cellspacing=20 cellpadding=50 bgcolor= #d9d9d9>
+<div classe = "label">
+	<tbody>
+
+	<tr ><td colspan = 2  >
+			
+<h2> Etudiant </h2>
+	{{ form_start(form, method = "POST") }}
+	{{ form_row(form.NomE, { 'label': 'Nom' }) }}
+	
+	{{ form_row(form.PrenomE, { 'label': 'Prenom' }) }}
+	{{ form_row(form.etudiant.VilleE, { 'label': 'Ville' }) }}
+	{{ form_row(form.etudiant.NumRueE, { 'label': 'Numéros de la Rue' }) }}
+	{{ form_row(form.etudiant.NomRueE, { 'label': 'Nom de la Rue' }) }}
+	{{ form_row(form.etudiant.CompE, { 'label': 'Complément Adresse' }) }}
+	{{ form_row(form.etudiant.CodePostalE, { 'label': 'Code Postal' }) }}
+	{{ form_row(form.etudiant.TelE, { 'label': 'Téléphone' }) }}
+	{{ form_row(form.EmailE, { 'label': 'Email' }) }}
+	</td>
+	
+		
+<td> <label class="E">
+
+
+<h2> Stage </h2>
+
+
+ 
+    {{ form_row(form.stage.DateD, { 'label': 'Date de début' }) }}
+	{{ form_row(form.stage.DateF, { 'label': 'Date de fin' }) }}
+	
+
+  <tr><td>
+  <h2> Entreprise </h2>
+
+
+    {{ form_row(form.entreprise.RaisonEnt, { 'label': 'Nom/Raison' }) }}
+	{{ form_row(form.entreprise.VilleEnt, { 'label': 'Ville' }) }}
+	{{ form_row(form.entreprise.NumRueEnt, { 'label': 'Numeros de la Rue' }) }}
+	{{ form_row(form.entreprise.NomRueEnt, { 'label': 'Nom de la Rue' }) }}
+	{{ form_row(form.entreprise.CodePostalEnt, { 'label': 'Code Postal' }) }}
+</td>
+   
+	<td>
+<h2>Representant</h2>
+
+   {{ form_row(form.representant.NomR, { 'label': 'Nom' }) }}
+   {{ form_row(form.representant.PrenomR, { 'label': 'Prenom' }) }}
+   {{ form_row(form.representant.TelR, { 'label': 'Téléphone' }) }}
+   {{ form_row(form.representant.Fonction, { 'label': 'Fonction' }) }}
+ 
+    
+	 </td>
+	 <td>
+	<h2> Maitre de Stage </h2>
+
+
+    {{ form_row(form.maitrestage.NomMS, { 'label': 'Nom' }) }}
+	{{ form_row(form.maitrestage.PrenomMS, { 'label': 'Prenom' }) }}
+	{{ form_row(form.maitrestage.TelMS, { 'label': 'Téléphone' }) }}
+	{{ form_row(form.maitrestage.FonctionMS, { 'label': 'Fonction' }) }}
+	{{ form_row(form.maitrestage.EmailMS, { 'label': 'Email' }) }}  
+	 
+    </td>
+	
+
+   
+ 
+   </tr>
+   <tr>
+
+
+</tr>
+</tbody>
+</table>
+<div align = center>
+<button class="btn"><font size="8" ><font color = #228B22>{{ button_label|default('Enregistrer') }}<font></button>
+{{ form_end(form, {'render_rest': false}) }}
+</div>
+</html>

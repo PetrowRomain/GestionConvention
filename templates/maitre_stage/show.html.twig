@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaitreStage{% endblock %}
+
+{% block body %}
+    <h1>MaitreStage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ maitre_stage.id }}</td>
+            </tr>
+            <tr>
+                <th>NomMS</th>
+                <td>{{ maitre_stage.NomMS }}</td>
+            </tr>
+            <tr>
+                <th>PrenomMS</th>
+                <td>{{ maitre_stage.PrenomMS }}</td>
+            </tr>
+            <tr>
+                <th>TelMS</th>
+                <td>{{ maitre_stage.TelMS }}</td>
+            </tr>
+            <tr>
+                <th>FonctionMS</th>
+                <td>{{ maitre_stage.FonctionMS }}</td>
+            </tr>
+            <tr>
+                <th>EmailMS</th>
+                <td>{{ maitre_stage.EmailMS }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('maitre_stage_index') }}">back to list</a>
+
+    <a href="{{ path('maitre_stage_edit', {'id': maitre_stage.id}) }}">edit</a>
+
+    {{ include('maitre_stage/_delete_form.html.twig') }}
+{% endblock %}

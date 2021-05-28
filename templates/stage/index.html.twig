@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage index{% endblock %}
+
+{% block body %}
+    <h1>Stage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DateD</th>
+                <th>DateF</th>
+                <th>Maitre de Stage</th>
+				<th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stage in stages %}
+            <tr>
+                <td>{{ stage.id }}</td>
+                <td>{{ stage.DateD ? stage.DateD|date('Y-m-d') : '' }}</td>
+                <td>{{ stage.DateF ? stage.DateF|date('Y-m-d') : '' }}</td>
+                 <td>{{ stage.getLienMS() }}</td>
+				 <td>
+                    <a href="{{ path('stage_show', {'id': stage.id}) }}">show</a>
+                    <a href="{{ path('stage_edit', {'id': stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('stage_new') }}">Create new</a>
+{% endblock %}

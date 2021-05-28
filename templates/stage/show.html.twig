@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage{% endblock %}
+
+{% block body %}
+    <h1>Stage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stage.id }}</td>
+            </tr>
+            <tr>
+                <th>DateD</th>
+                <td>{{ stage.DateD ? stage.DateD|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateF</th>
+                <td>{{ stage.DateF ? stage.DateF|date('Y-m-d') : '' }}</td>
+            </tr>
+			<tr>
+                <th>Maitre de Stage</th>
+                <td>{{ stage.getLienMS() }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('stage_index') }}">back to list</a>
+
+    <a href="{{ path('stage_edit', {'id': stage.id}) }}">edit</a>
+
+    {{ include('stage/_delete_form.html.twig') }}
+{% endblock %}

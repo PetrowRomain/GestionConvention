@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MaitreStage index{% endblock %}
+
+{% block body %}
+    <h1>MaitreStage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NomMS</th>
+                <th>PrenomMS</th>
+                <th>TelMS</th>
+                <th>FonctionMS</th>
+                <th>EmailMS</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for maitre_stage in maitre_stages %}
+            <tr>
+                <td>{{ maitre_stage.id }}</td>
+                <td>{{ maitre_stage.NomMS }}</td>
+                <td>{{ maitre_stage.PrenomMS }}</td>
+                <td>{{ maitre_stage.TelMS }}</td>
+                <td>{{ maitre_stage.FonctionMS }}</td>
+                <td>{{ maitre_stage.EmailMS }}</td>
+                <td>
+                    <a href="{{ path('maitre_stage_show', {'id': maitre_stage.id}) }}">show</a>
+                    <a href="{{ path('maitre_stage_edit', {'id': maitre_stage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('maitre_stage_new') }}">Create new</a>
+{% endblock %}
